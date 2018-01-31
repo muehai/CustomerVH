@@ -1,0 +1,116 @@
+﻿@model IEnumerable<VehiclesApp.Models.Customers>
+@using VehiclesApp.Models;
+
+
+@{
+    ViewData["Title"] = "Customers Vehicles";
+}
+
+<hr />
+
+<form asp-controller="Vehicles" asp-action="Index" method="post" role="form">
+    <hr />
+    <div class="form-group">
+        <div class="row">
+            <div class="form-actions no-color">
+                <p>
+                    Search vehicles by customer names and connection type:
+                    <input type="text" name="vehicleSearchStr" value="@ViewData["VehicleFilteData"]" />
+                    <input type="submit" value="Search" class="btn btn-default" /> |
+                    <a asp-action="Index"> Back vehicles list </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+
+    @*<div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    @if (ViewBag.SelectedValue != null)
+                    {
+                        <text>Selected vehicle customers: </text>
+                        @ViewBag.SelectedValue;
+                    }
+                </div>
+            </div>
+        </div>*@
+
+</form>
+
+
+<h2 style="color:red">@ViewBag.FoundMessage</H2>
+<hr />
+<h2>List of vehicles status </h2>
+
+
+<div>
+
+    <hr />
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.VIN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RegNr)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomersName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerAddresses)
+                </th>
+                <th>
+
+                    @Html.DisplayNameFor(model => model.ConnectionStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VehicleconnectedTime)
+                </th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VIN)
+                    </td>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.RegNr)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.CustomersName)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.CustomerAddresses)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.ConnectionStatus)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.VehicleconnectedTime)
+                    </th>
+
+                    <th></th>
+
+
+                </tr>
+
+            }
+
+
+        </tbody>
+    </table>
+
+</div>
+
+

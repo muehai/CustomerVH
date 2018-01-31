@@ -1,0 +1,54 @@
+﻿@model VehiclesApp.Models.Customers
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>Customers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VIN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VIN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RegNr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RegNr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomersName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomersName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerAddresses)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerAddresses)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ConnectionStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConnectionStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleconnectedTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleconnectedTime)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
